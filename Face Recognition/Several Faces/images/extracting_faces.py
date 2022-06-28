@@ -1,14 +1,15 @@
 import cv2
 import os
 
-imagesPath = "D:/UNIFRANZ/9no SEMESTRE/INTELIGENCIA ARTIFICIAL EN SISTEMAS EMBEBIDOS/Deteccion facial/Face Recognition/Several Faces/images/input_images"
+imagesPath = "D:/UNIFRANZ/9no SEMESTRE/INTELIGENCIA ARTIFICIAL EN SISTEMAS EMBEBIDOS/Deteccion facial/Face " \
+             "Recognition/Several Faces/images/input_images "
 
-# Almacenar los rostros obtenidos en una nueva carpeta
+# Store the obtained faces in a new folder
 if not os.path.exists("faces"):
     os.makedirs("faces")
     print("New directory: faces")
 
-# Detector facial con el detector de OpenCV Haarcascade
+# Face detector with the OpenCV Haar Cascade detector
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 count = 0
 

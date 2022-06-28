@@ -2,15 +2,16 @@ import cv2
 import os
 import face_recognition
 
-# Codificar los rostros extraidos
-imageFacesPath = "D:/UNIFRANZ/9no SEMESTRE/INTELIGENCIA ARTIFICIAL EN SISTEMAS EMBEBIDOS/Deteccion facial/Face Recognition/Several Faces/images/faces"
+# Encode the extracted faces
+imageFacesPath = "D:/UNIFRANZ/9no SEMESTRE/INTELIGENCIA ARTIFICIAL EN SISTEMAS EMBEBIDOS/Deteccion facial/Face " \
+                 "Recognition/Several Faces/images/faces "
 
 facesEncodings = []
 facesNames = []
 
 for file_name in os.listdir(imageFacesPath):
     image = cv2.imread(imageFacesPath + "/" + file_name)
-    #Open CV lee por defecto en BGR asi que necesitamos transformarlo
+    # Opencv reads by default in BGR, so we need to transform it
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     # cv2.imshow("Image", image)
     # cv2.waitKey(0)
@@ -23,10 +24,10 @@ for file_name in os.listdir(imageFacesPath):
 # print(facesNames)
 
 ##########################################
-# Leyendo Video Streaming
+# Reading Video Streaming
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
-# Detector facial con el detector de OpenCV Haarcascade
+# Face detector with the OpenCV Haar Cascade detector
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 
 while True:
